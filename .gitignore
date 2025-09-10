@@ -1,0 +1,10 @@
+# venv
+.venv/
+# archivos temporales
+__pycache__/
+*.pyc
+# dumps locales
+out/
+# IDE
+.vscode/
+.idea/
