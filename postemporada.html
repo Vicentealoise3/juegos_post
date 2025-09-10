@@ -119,7 +119,12 @@ async function loadGames(){
       const fecha = g.date_local_scl || g.date_utc || "-";
       const home = g.home || "???";
       const away = g.away || "???";
-      const score = `${g.home_runs ?? "-"} - ${g.away_runs ?? "-"}`;
+      let score;
+      if ((g.home_runs ?? 0) === 0 && (g.away_runs ?? 0) === 0) {
+        score = "RESETEADO";
+      } else {
+        score = `${g.home_runs ?? "-"} - ${g.away_runs ?? "-"}`;
+      }
       rows += `
         <tr>
           <td>${fecha}</td>
